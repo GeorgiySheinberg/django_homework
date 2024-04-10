@@ -18,5 +18,5 @@ class Command(BaseCommand):
                                  price=phone.get("price"),
                                  release_date=phone.get("release_date"),
                                  lte_exists=phone.get("lte_exists"),
-                                 slug=phone.get("name").replace(" ", "").lower())
+                                 )
         return
