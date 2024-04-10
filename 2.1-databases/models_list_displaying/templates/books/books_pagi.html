@@ -16,7 +16,12 @@
                 <p>Дата публикации: {{book.pub_date}}</p>
             </div>
             {% endfor %}
-
+           {% if page.has_previous%}
+            <a href="http://127.0.0.1:8000/books/"{{}}>Назад</a>
+            {% endif %}
+            {% if page.has_next%}
+            <a href="http://127.0.0.1:8000/books/"{{}}>Вперёд</a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
