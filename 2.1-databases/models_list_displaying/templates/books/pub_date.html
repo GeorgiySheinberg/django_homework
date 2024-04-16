@@ -16,12 +16,11 @@
                 <p>Дата публикации: {{book.pub_date}}</p>
             </div>
             {% endfor %}
-            {% endfor %}
              {% if page.has_previous%}
-             <a href="/{{}}">{{}}</a>
+             <a href="/{{book.pub_date}}">{{book.pub_date}}</a>
             {% endif %}
             {% if page.has_next%}
-             <a href="/{{}}">{{}}</a>
+             <a href="/{{book.pub_date}}">{{book.pub_date}}</a>
              {% endif %}
         </div>
     </div>

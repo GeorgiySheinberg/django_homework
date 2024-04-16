@@ -19,9 +19,9 @@ def books_view(request: str):
 
 
 def show_book(request: str, pub_date: str):
-    paginator = Paginator(Book.objects.order_by("pub_date"), 10)
-
-    paginator = Paginator({str(book.pub_date) for book in Book.objects.all()}, 1)
+    paginator = Paginator(Book.objects.distinct("pub_date"), 1)
+    print(paginator.get_page(2))
+    # paginator = Paginator({str(book.pub_date) for book in Book.objects.all()}, 1)
     template = 'books/pub_date.html'
 
 
@@ -30,10 +30,3 @@ def show_book(request: str, pub_date: str):
         # "dates": [prev_page, next_page]
     }
     return render(request, template, context)
-# {% endfor %}
-#             {% if page.has_previous%}
-#             <a href="/{{}}">{{}}</a>
-#             {% endif %}
-#             {% if page.has_next%}
-#             <a href="/{{}}">{{}}</a>
-#             {% endif %}
