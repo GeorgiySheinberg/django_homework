@@ -30,11 +30,3 @@ class Advertisement(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True
     )
-
-
-class DateFilter(FilterSet):
-    created_at = DateFromToRangeFilter()
-
-    class Meta:
-        model = Advertisement
-        fields = ['created_at']
